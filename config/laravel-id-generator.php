@@ -6,6 +6,6 @@ return [
         'padding' => 5,
         'prefix' => 'TEST-',
         'suffix' => '',
-        'initial-starting-point' => 0
+        'initial-starting-point' => 1
     ],
 ];
