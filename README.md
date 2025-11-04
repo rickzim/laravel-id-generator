@@ -47,6 +47,14 @@ $id = IdGenerator::generate(Invoice::class, 'column_name', 5, 'INV-{YEAR}-');
 echo $id; // INV-2025-00001
 ```
 
+### Initial starting point
+Start from a specific number if there is no ID found in DB
+
+```php
+$id = IdGenerator::generate(Invoice::class, 'column_name', 5, 'INV-', '', 5);
+echo $id; // INV-2025-00005
+```
+
 ### Generators
 
 After installation, you can publish the package configuration file using:
@@ -63,7 +71,8 @@ return [
         'field' => 'number',
         'padding' => 5,
         'prefix' => 'INV-',
-        'suffix' => '-{YEAR}'
+        'suffix' => '-{YEAR}',
+        'initial-starting-point' => 1
     ],
     'receipts' => [
         'field' => 'number',
