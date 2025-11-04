@@ -82,6 +82,39 @@ class IdGeneratorTest extends TestCase
         $this->assertEquals('2025-00001', $customId);
     }
 
+    public function test_it_generates_with_initial_starting_point(): void
+    {
+        $customId = IdGenerator::generate(TestModel::class, 'custom_id', 5, '', '', 2);
+
+        $this->assertEquals('00002', $customId);
+
+        $customId = IdGenerator::generate(TestModel::class, 'custom_id', 5, '', '', 5001);
+
+        $this->assertEquals('05001', $customId);
+
+        $customId = IdGenerator::generate(TestModel::class, 'custom_id', 5, '', '', 50001);
+
+        $this->assertEquals('50001', $customId);
+
+        $customId = IdGenerator::generate(TestModel::class, 'custom_id', 5, '', '', 500001);
+
+        $this->assertEquals('500001', $customId);
+
+        $customId = IdGenerator::generate(TestModel::class, 'custom_id', 5, '', '', -2);
+
+        $this->assertEquals('00001', $customId);
+
+        $customId = IdGenerator::generate(TestModel::class, 'custom_id', 5, '', '', 0);
+
+        $this->assertEquals('00001', $customId);
+
+        TestModel::factory()->create(['custom_id' => '00001']);
+
+        $customId = IdGenerator::generate(TestModel::class, 'custom_id', 5, '', '', 500001);
+
+        $this->assertEquals('00002', $customId);
+    }
+
     public function test_it_generates_from_config(): void
     {
         TestModel::factory()->create(['custom_id' => 'TEST-00001']);
