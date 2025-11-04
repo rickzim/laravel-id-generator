@@ -2,6 +2,18 @@
 
 All notable changes to `Laravel ID Generator` will be documented in this file
 
+## v1.3.0 - 2025-11-04
+
+### What's Changed
+
+* Add initial starting point configuration for ID generation by @rickzim in https://github.com/omaressaouaf/laravel-id-generator/pull/3
+
+### New Contributors
+
+* @rickzim made their first contribution in https://github.com/omaressaouaf/laravel-id-generator/pull/3
+
+**Full Changelog**: https://github.com/omaressaouaf/laravel-id-generator/compare/v1.2.1...v1.3.0
+
 ## v1.2.1 - 2025-04-26
 
 ### What's Changed
