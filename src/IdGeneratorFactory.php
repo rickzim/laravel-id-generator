@@ -102,6 +102,7 @@ class IdGeneratorFactory
         }
 
         return Str::swap([
+            '{COMPACT_DATE}' => now()->format('Ymd'),
             '{DATE}' => now()->toDateString(),
             '{MONTH}' => now()->format('Y-m'),
             '{YEAR}' => now()->format('Y'),
